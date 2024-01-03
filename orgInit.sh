@@ -6,6 +6,7 @@ sfdx force:source:push
 
 # Assign permission set
 sfdx shane:user:permset:assign -l User -g User -n PlatformEncryption
+sfdx shane:user:permset:assign -l User -g User -n Encryption
 
 # Set the default password.
 sfdx shane:user:password:set -g User -l User -p salesforce1
