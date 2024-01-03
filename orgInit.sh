@@ -6,20 +6,20 @@ sfdx force:source:push
 
 # Assign permission set
 sfdx shane:user:permset:assign -l User -g User -n PlatformEncryption
-sfdx shane:user:permset:assign -l User -g User -n Encryption
+#sfdx shane:user:permset:assign -l User -g User -n Encryption
 
 # Set the default password.
 sfdx shane:user:password:set -g User -l User -p salesforce1
 
 # Create Tenant Secrets
-sfdx force:data:record:create -s TenantSecret -v "Description=ProbabilisticKey"
-sfdx force:data:record:create -s TenantSecret -v "Description=SearchKey Type=SearchIndex"
-sfdx force:data:record:create -s TenantSecret -v "Description=EventBusKey Type=EventBus"
+#sfdx force:data:record:create -s TenantSecret -v "Description=ProbabilisticKey"
+#sfdx force:data:record:create -s TenantSecret -v "Description=SearchKey Type=SearchIndex"
+#sfdx force:data:record:create -s TenantSecret -v "Description=EventBusKey Type=EventBus"
 
 # Deploy platform encryption settings
 sfdx force:mdapi:deploy -d ./src -w 5
 
-sfdx force:data:record:create -s TenantSecret -v "Description=DeterministicKey Type=DeterministicData"
+#sfdx force:data:record:create -s TenantSecret -v "Description=DeterministicKey Type=DeterministicData"
 
 # Push sample data for demo
 sfdx automig:load -d data
